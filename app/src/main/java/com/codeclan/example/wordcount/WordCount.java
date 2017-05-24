@@ -20,7 +20,6 @@ public class WordCount {
 
 
     public String getInput() {
-
         return this.input;
     }
 

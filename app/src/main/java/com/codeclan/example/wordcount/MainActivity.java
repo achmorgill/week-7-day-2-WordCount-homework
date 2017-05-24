@@ -16,6 +16,8 @@ public class MainActivity extends AppCompatActivity {
     private Button countButton;
     private TextView answerText;
 
+    private WordCount wordCount;
+
 
 
     @Override
@@ -23,22 +25,17 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        inputText = (EditText)findViewById(R.id.input_text);
-        countButton = (Button)findViewById(R.id.count_button);
-        answerText = (TextView)findViewById(R.id.answer_view);
+        inputText = (EditText) findViewById(R.id.input_text);
+        countButton = (Button) findViewById(R.id.count_button);
+        answerText = (TextView) findViewById(R.id.answer_view);
     }
 
     public void onCountButtonClicked(View button) {
 
-
-        Log.d(getClass().toString(),"enter a string");
         String input = inputText.getText().toString();
-        Log.d(getClass().toString(),"string has been entered" + input);
 
-        WordCount answerToButtonClick = new WordCount();
-
-//        int answer = answerToButtonClick.getWordCount();
-
-//        answerText.setText(answer);
+        WordCount wordCount = new WordCount(input);
+        int answer = answerToButtonClick.getWordCount();
+        answerText.setText(answer);
     }
 }

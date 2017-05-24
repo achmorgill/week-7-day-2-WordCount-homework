@@ -34,8 +34,12 @@ public class MainActivity extends AppCompatActivity {
 
         String input = inputText.getText().toString();
 
-        WordCount wordCount = new WordCount(input);
-        int answer = answerToButtonClick.getWordCount();
-        answerText.setText(answer);
+        wordCount = new WordCount(input);
+
+
+        int answer = wordCount.getWordCount();
+//        answer is returned as an integer so need to be converted to a string
+//        as setText will only output a string
+        answerText.setText(Integer.toString(answer));
     }
 }
